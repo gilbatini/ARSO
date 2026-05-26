@@ -39,7 +39,7 @@ import SchedulePanel from "./components/SchedulePanel";
 import PortalDashboard from "./components/PortalDashboard";
 import { motion, AnimatePresence } from "motion/react";
 
-import arsoLogo from "./assets/images/arso_logo_1779808470136.png";
+import arsoLogo from "./assets/images/arso_logo_official_1779821931611.png";
 import arsoBanner from "./assets/images/arso_banner_1779808489988.png";
 
 // Default profile for the demo prefill
@@ -468,8 +468,9 @@ export default function App() {
             referrerPolicy="no-referrer"
           />
           {/* Visual blue-green-slate elegant fade overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-slate-100/40 via-blue-50/45 to-emerald-50/45 mix-blend-multiply" />
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-slate-100/30 via-sky-50/35 to-emerald-50/30 mix-blend-multiply" />
+          {/* Bottom dark vignette fade for footer transitions */}
+          <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent" />
         </div>
       )}
 
@@ -1885,7 +1886,7 @@ export default function App() {
       </main>
 
       {/* Primary Footer Block with complete compliance indicators */}
-      <footer className="w-full bg-[#002f17] text-white border-t-8 border-secondary-container mt-16 py-12">
+      <footer className="w-full bg-[#001107] text-white border-t-8 border-secondary-container mt-16 py-12 relative z-10 shadow-[0_-15px_30px_rgba(0,0,0,0.55)]">
         <div className="max-w-container-max mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10 text-xs font-sans">
           
           <div className="md:col-span-6 space-y-4">
