@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom palette matching Heritage-Modernism specifications with vibrant logo green */
+  --color-primary: #009c4d;
+  --color-primary-container: #006837;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #8ee4a6;
+  --color-secondary: #775a00;
+  --color-secondary-container: #fdce5d;
+  --color-on-secondary-container: #745700;
+  --color-secondary-fixed: #ffdf9a;
+  --color-tertiary: #603912;
+  --color-tertiary-container: #7b5027;
+  --color-on-tertiary-container: #ffc695;
+  --color-background: #f4f5f2;
+  --color-surface: #f4f5f2;
+  --color-surface-container: #e6e7e2;
+  --color-surface-container-low: #ebece7;
+  --color-surface-container-high: #dedfda;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-variant: #e2e3e1;
+  --color-on-surface: #1a1c1b;
+  --color-on-surface-variant: #3f4940;
+  --color-outline: #6f7a70;
+  --color-outline-variant: #bec9be;
+  
+  --spacing-container-max: 1280px;
+}
+
+/* Neumorphic tactile shadows */
+.neumorphic-card {
+  background-color: var(--color-background);
+  box-shadow: 8px 8px 16px #cfd2c8, -8px -8px 16px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.neumorphic-card-inset {
+  background-color: var(--color-background);
+  box-shadow: inset 4px 4px 8px #cfd2c8, inset -4px -4px 8px #ffffff;
+}
+
+.neumorphic-btn {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  box-shadow: 5px 5px 10px #cfd2c8, -5px -5px 10px #ffffff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neumorphic-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 7px 7px 14px #cfd2c8, -7px -7px 14px #ffffff;
+}
+
+.neumorphic-btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 6px #cfd2c8, inset -3px -3px 6px #ffffff;
+}
+
+.neumorphic-btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 5px 5px 10px rgba(0, 156, 77, 0.25), -5px -5px 10px #ffffff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neumorphic-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 7px 7px 14px rgba(0, 156, 77, 0.3), -7px -7px 14px #ffffff;
+}
+
+.neumorphic-btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 6px rgba(0, 100, 50, 0.4);
+}
+
+/* Kente decorative elements */
+.kente-divider {
+  height: 6px;
+  background-image: url('./assets/images/kente_pattern_1779808507103.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.kente-border-top {
+  background-image: url('./assets/images/kente_pattern_1779808507103.png');
+  background-size: auto 12px;
+  background-repeat: repeat-x;
+  height: 12px;
+  width: 100%;
+}
+
+.crane-watermark {
+  background-image: url('./assets/images/crane_watermark_1779808522805.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 40%;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.crane-watermark-login {
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+}
+
+h1, h2, h3, h4, .font-headline {
+  font-family: var(--font-headline);
+}
+

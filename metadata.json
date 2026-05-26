@@ -1,0 +1,6 @@
+{
+  "name": "ARSO 2026 Assembly",
+  "description": "Delegates Resource Center and Portal for the 32nd ARSO General Assembly 2026 in Kampala, Uganda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
