@@ -458,6 +458,21 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background text-on-surface flex flex-col relative pb-16 md:pb-0 font-sans">
       
+      {/* FULL PAGE BACKGROUND IMAGE FOR LOGIN */}
+      {activeTab === "portal" && !isLoggedIn && (
+        <div className="absolute inset-0 pointer-events-none z-0 select-none overflow-hidden">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1mdBo-KTlcd_p_VAllykShw0D3vmlixia" 
+            alt="ARSO Assembly Backdrop" 
+            className="w-full h-full object-cover filter blur-[2px] opacity-75 brightness-[0.95]"
+            referrerPolicy="no-referrer"
+          />
+          {/* Visual blue-green-slate elegant fade overlay */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-slate-100/40 via-blue-50/45 to-emerald-50/45 mix-blend-multiply" />
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-50 to-transparent" />
+        </div>
+      )}
+
       {/* Dynamic Overlay Document Reader */}
       {activeReaderDoc && (
         <DocumentReader
@@ -614,7 +629,6 @@ export default function App() {
             
             {/* Slogan strip spanning key columns */}
             <div className="text-white py-4 px-6 rounded-2xl relative overflow-hidden bg-primary shadow-sm border-b-2 border-primary-container">
-              <div className="kente-pattern-bg absolute inset-0 opacity-10"></div>
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
                 <p className="italic font-headline text-xs md:text-sm font-extrabold tracking-wide uppercase">
                   "Standards enabling Intra-Africa trade under the AfCFTA — One Certificate Working for You"
@@ -1641,9 +1655,10 @@ export default function App() {
 
         {/* ----------------- TAB: MEMBER PORTAL ----------------- */}
         {activeTab === "portal" && (
-          <div className="animate-fade-in relative min-h-[60vh] flex flex-col justify-center">
+          <div className="animate-fade-in relative min-h-[60vh] flex flex-col justify-center px-4 py-12">
             
-            {isLoggedIn && userProfile ? (
+            <div className="relative z-10 w-full">
+              {isLoggedIn && userProfile ? (
               <PortalDashboard
                 profile={userProfile}
                 bookingList={bookmarkedSessions}
@@ -1662,7 +1677,7 @@ export default function App() {
             ) : registrationMode ? (
               /* Fresh Registration Form View */
               <div className="max-w-lg mx-auto w-full bg-white shadow-2xl rounded-3xl border border-slate-250 overflow-hidden">
-                <div className="kente-divider bg-primary w-full"></div>
+                <div className="h-2 bg-primary w-full shadow-sm"></div>
                 
                 <div className="p-6 md:p-8 space-y-6 text-xs">
                   <div className="text-center">
@@ -1774,14 +1789,14 @@ export default function App() {
             ) : (
               /* Standard login card prefilled according to mockups */
               <div className="max-w-md mx-auto w-full bg-white shadow-2xl rounded-3xl border border-slate-200 overflow-hidden">
-                <div className="kente-divider bg-[#009c4d] w-full"></div>
+                <div className="h-2 bg-[#009c4d] w-full shadow-sm"></div>
                 <div className="p-8 md:p-10 space-y-6">
                   
                   <div className="flex flex-col items-center mb-4">
                     <img 
-                      alt="ARSO medallion banner" 
-                      className="h-20 w-auto mb-3" 
-                      src={arsoBanner}
+                      alt="ARSO Logo" 
+                      className="h-16 w-auto mb-3 object-contain" 
+                      src={arsoLogo}
                       referrerPolicy="no-referrer"
                     />
                     <h1 className="text-xl md:text-2xl font-headline font-black text-primary tracking-tighter uppercase">
@@ -1863,6 +1878,7 @@ export default function App() {
                 </div>
               </div>
             )}
+            </div>
 
           </div>
         )}

@@ -97,6 +97,12 @@
   width: 100%;
 }
 
+.kente-pattern-bg {
+  background-image: url('./assets/images/kente_pattern_1779808507103.png');
+  background-repeat: repeat;
+  background-size: 120px auto;
+}
+
 .crane-watermark {
   background-image: url('./assets/images/crane_watermark_1779808522805.png');
   background-repeat: no-repeat;
